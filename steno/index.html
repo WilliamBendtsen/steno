@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steno Museum interaktiv video</title>
+    <script src="https://kit.fontawesome.com/410264dd86.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+
+        <div class="videos">
+
+            <!-- Begyndende video (skal loope inden man trykker på knappen)-->
+            <div class="active initial">
+                <video autoplay loop muted>
+                    <source src="video/startloop.mp4" type="video/mp4">
+                </video>
+            </div>
+
+                            <!-- Video hvor Alex går fra sengen til vinduet -->
+                            <div class="room-scene hide">
+                                <video>
+                                    <source src="video/room-scene.mp4">
+                                </video>
+                            </div>
+
+                            <!-- Videoen hvor Alex flyver fra taget -->
+                            <div class="roof-scene hide">
+                                <video>
+                                    <source src="video/roof-scene.mp4" type="video/mp4">
+                                </video>
+                            </div>
+
+                            <!-- Videoen hvor alex flyver til månen -->
+                            <div class="moon-option hide">
+                                <video>
+                                    <source src="video/moon-choice.mp4" type="video/mp4">
+                                </video>
+                            </div>
+
+                            <!-- Videoen hvor Alex flyver til de andre planeter -->
+                            <div class="planets-option hide">
+                                <video>
+                                    <source src="video/space-choice.mp4" type="video/mp4">
+                                </video>
+                            </div>
+
+            <!-- Afsluttende video -->
+            <div class="closing hide">
+                <video>
+                    <source src="video/end.mp4" type="video/mp4">
+                </video>
+            </div>
+
+              <!-- Play knappen (skal blive til "start video") -->
+              <div class="play">
+               <img class="play-button" src="img/start-knap.png" alt="start knap">
+            </div>
+
+
+            <!-- Valget mellem at tage til månen eller tage til de andre planeter -->
+            <div class="menu hide">
+                <div class="menu-wrapper">
+
+                    <div class="window hide">
+                    </div>
+
+                    <div class="options-2 hide">
+                        <h3>Hvor skal vi tage hen?</h3>
+                            <ul>
+                                <li><a id="option-1-link">Til Månen!</a></li>
+                                <li><a id="option-2-link">Jeg vil udforske de andre planeter!</a></li>
+                            </ul>
+                            <i id="arrow-1" class="fa-solid fa-arrow-right"></i>
+                            <i id="arrow-2" class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="options-3 hide">
+                        <h3>Hvilken planet skal vi rejse til?</h3>
+                    </div>
+
+                    <!-- Den afsluttende besked / scene -->
+                    <div class="closing hide">
+                        <h3>Her skal videoen starte forfra</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="hide show-below-450 mb15">
+            <p>Please, change your phone to landscape view!</p>
+        </div>
+
+        <script src="js/script.js"></script>
+        
+    </body>
+</html>
