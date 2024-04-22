@@ -33,6 +33,44 @@ window.onload = function() {
                 playPlanetsChoice();
             }
 
+            /* Så man kan klikke på alle månerne og få deres tilhørende video spillet */
+            let fullMoonLink = document.getElementById("fuld");
+            fullMoonLink.onclick = function() {
+                showVideos(0, videosContainer.getElementsByClassName("full-moon"));
+                playFullMoon();
+            }
+
+            let waningMoonLink = document.getElementById("aftagende");
+            waningMoonLink.onclick = function() {
+                showVideos(0, videosContainer.getElementsByClassName("aftagende"));
+                playWaningMoon();
+            }
+
+            let waxingMoonLink = document.getElementById("tiltagende");
+            waxingMoonLink.onclick = function() {
+                showVideos(0, videosContainer.getElementsByClassName("tiltagende"));
+                playWaxingMoon();
+            }
+
+            let newMoonLink = document.getElementById("ny");
+            newMoonLink.onclick = function() {
+                showVideos(0, videosContainer.getElementsByClassName("new-moon"));
+                playNewMoon();
+            }
+
+            let finalOption1 = document.getElementById("back-option");
+            finalOption1.onclick = function() {
+                showVideos(0, videosContainer.getElementsByClassName("end-part-1"));
+                playMoonChoice(); /* Anden video her / stillestående billede?? */
+            }
+
+            let finalOption2 = document.getElementById("continue-option");
+            finalOption2.onclick = function() {
+                showVideos(0, videosContainer.getElementsByClassName("end-part-2"));
+                playEnd2();
+            }
+
+            
 
             /* Funktioner for at man kan trykke på et element for at spille en ny scene */
 
@@ -43,7 +81,7 @@ window.onload = function() {
                 setTimeout (function () {
                     menu.style.display = "block";
                     menu.getElementsByClassName("window")[0].style.display = "block";
-                }, 14000);
+                }, 1000); /* 14000 */
             };
 
             /* Scenen på taget der ender med valget mellem at tage til månen eller videre i rummet */
@@ -54,20 +92,11 @@ window.onload = function() {
                 let windowDiv = menu.getElementsByClassName("window")[0];
                 windowDiv.parentNode.removeChild(windowDiv);
 
+
                 setTimeout (function () {
                     menu.style.display = "block";
                     menu.getElementsByClassName("options-2")[0].style.display = "block";
-                }, 30000);
-            };
-
-            /* Scenen hvor Alex flyver hen til månen */
-            function playMoonChoice() {
-                playVideo(videosContainer.getElementsByClassName("moon-option")[0],
-                loop=false);
-
-                setTimeout (function () {
-                    menu.style.display = "block";
-                }, 1000);
+                }, 1000); /* 30000 */
             };
 
             /* Scenen hvor Alex flyver videre til de andre planeter*/
@@ -80,6 +109,72 @@ window.onload = function() {
 
                 setTimeout (function () {
                     menu.style.display = "block";
+                }, 1000);
+            };
+
+            /* Scenen hvor Alex flyver hen til månen */
+            function playMoonChoice() {
+                playVideo(videosContainer.getElementsByClassName("moon-option")[0],
+                loop=false);
+
+                setTimeout (function () {
+                    menu.style.display = "block";
+                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "block";
+                    menu.getElementsByClassName("options-2")[0].style.display = "none";
+                }, 1000);
+            };
+
+
+
+            /* Alle 4 scener for alle de 3 faser af månen */
+            function playFullMoon() {
+                playVideo(videosContainer.getElementsByClassName("full-moon")[0],
+                loop=false);
+
+                setTimeout (function () {
+                    menu.style.display = "block";
+                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                }, 1000);
+            };
+
+            function playWaningMoon() {
+                playVideo(videosContainer.getElementsByClassName("aftagende")[0],
+                loop=false);
+
+                setTimeout (function () {
+                    menu.style.display = "block";
+                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                }, 1000);
+            };
+
+            function playWaxingMoon() {
+                playVideo(videosContainer.getElementsByClassName("tiltagende")[0],
+                loop=false);
+
+                setTimeout (function () {
+                    menu.style.display = "block";
+                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                }, 1000);
+            };
+
+            function playNewMoon() {
+                playVideo(videosContainer.getElementsByClassName("new-moon")[0],
+                loop=false);
+
+                setTimeout (function () {
+                    menu.style.display = "block";
+                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                }, 1000);
+            };
+
+            /* Afsluttende scene */
+            function playClosingScene() {
+                playVideo(videosContainer.getElementsByClassName("new-moon")[0],
+                loop=false);
+
+                setTimeout (function () {
+                    menu.style.display = "block";
+                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
                 }, 1000);
             };
 

@@ -1,42 +1,18 @@
 [
     {
       "name": "Nymåne",
-      "description": "Denne fase af månen er ikke synlig fra jorden af",
-      "image": "images/new_moon.jpg",
-      "interactiveElement": {
-          "type": "clickableArea",
-          "description": "Click on the bright part of the moon to learn more.",
-          "area": { "x": 50, "y": 70, "width": 30, "height": 20 }
-        }
+      "description": "Denne fase af månen er ikke synlig fra jorden af"
     },
     {
       "name": "Tiltagende Måne",
-      "description": "I denne fase er månen på vej til at blive fuldmåne",
-      "image": "images/waxing_crescent.jpg",
-      "interactiveElement": {
-        "type": "clickableArea",
-        "description": "Click on the bright part of the moon to learn more.",
-        "area": { "x": 50, "y": 70, "width": 30, "height": 20 }
-      }
+      "description": "I denne fase er månen på vej til at blive fuldmåne"
     },
     {
       "name": "Fuldmåne",
-      "description": "I denne fase af månen kan man se det hele fra jorden af",
-      "image": "images/waxing_crescent.jpg",
-      "interactiveElement": {
-        "type": "clickableArea",
-        "description": "Click on the bright part of the moon to learn more.",
-        "area": { "x": 50, "y": 70, "width": 30, "height": 20 }
-      }
+      "description": "I denne fase af månen kan man se det hele fra jorden af"
     },
     {
-      "name": "I denne fase er månen på vej væk igen",
-      "description": "A small sliver of the moon is visible.",
-      "image": "images/waxing_crescent.jpg",
-      "interactiveElement": {
-        "type": "clickableArea",
-        "description": "Click on the bright part of the moon to learn more.",
-        "area": { "x": 50, "y": 70, "width": 30, "height": 20 }
-      }
+      "name": "Aftagende Måne",
+      "description": "I denne fase er månen på vej væk igen"
     }
   ]
