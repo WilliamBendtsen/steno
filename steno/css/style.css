@@ -154,6 +154,23 @@ body {
     cursor: pointer;
 }
 
+#back-option{
+    color: white;
+    position: absolute;
+    font-size: 5rem;
+    left: 7%;
+    top: 2%;
+    cursor: pointer;
+}
+
+#continue-option{
+    color: white;
+    position: absolute;
+    font-size: 5rem;
+    right: 7%;
+    top: 2%;
+    cursor: pointer;
+}
 
 @keyframes bounce1{
     0%, 100%{

@@ -58,14 +58,20 @@ window.onload = function() {
                 playNewMoon();
             }
 
-            let finalOption1 = document.getElementById("back-option");
-            finalOption1.onclick = function() {
-                showVideos(0, videosContainer.getElementsByClassName("end-part-1"));
+            let backOption = document.getElementById("back-option");
+            backOption.onclick = function() {
+                showVideos(0, videosContainer.getElementsByClassName("moon-option"));
                 playMoonChoice(); /* Anden video her / stillestående billede?? */
             }
 
-            let finalOption2 = document.getElementById("continue-option");
-            finalOption2.onclick = function() {
+            let continueOption = document.getElementById("continue-option");
+            continueOption.onclick = function() {
+                showVideos(0, videosContainer.getElementsByClassName("end-part-1"));
+                playEnd1();
+            }
+
+            let finalClick = document-getElementById("final-click");
+            finalClick.onclick = function() {
                 showVideos(0, videosContainer.getElementsByClassName("end-part-2"));
                 playEnd2();
             }
@@ -117,10 +123,12 @@ window.onload = function() {
                 playVideo(videosContainer.getElementsByClassName("moon-option")[0],
                 loop=false);
 
+                menu.getElementsByClassName("options-2")[0].style.display = "none";
+                    menu.getElementsByClassName("final-option")[0].style.display = "none";
+
                 setTimeout (function () {
                     menu.style.display = "block";
                     menu.getElementsByClassName("moon-phase-options")[0].style.display = "block";
-                    menu.getElementsByClassName("options-2")[0].style.display = "none";
                 }, 1000);
             };
 
@@ -131,9 +139,11 @@ window.onload = function() {
                 playVideo(videosContainer.getElementsByClassName("full-moon")[0],
                 loop=false);
 
+                menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+
                 setTimeout (function () {
                     menu.style.display = "block";
-                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                    menu.getElementsByClassName("final-option")[0].style.display = "block";
                 }, 1000);
             };
 
@@ -141,9 +151,11 @@ window.onload = function() {
                 playVideo(videosContainer.getElementsByClassName("aftagende")[0],
                 loop=false);
 
+                menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+
                 setTimeout (function () {
                     menu.style.display = "block";
-                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                    menu.getElementsByClassName("final-option")[0].style.display = "block";
                 }, 1000);
             };
 
@@ -151,9 +163,11 @@ window.onload = function() {
                 playVideo(videosContainer.getElementsByClassName("tiltagende")[0],
                 loop=false);
 
+                menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+
                 setTimeout (function () {
                     menu.style.display = "block";
-                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                    menu.getElementsByClassName("final-option")[0].style.display = "block";
                 }, 1000);
             };
 
@@ -161,15 +175,29 @@ window.onload = function() {
                 playVideo(videosContainer.getElementsByClassName("new-moon")[0],
                 loop=false);
 
+                menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+
                 setTimeout (function () {
                     menu.style.display = "block";
-                    menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                    menu.getElementsByClassName("final-option")[0].style.display = "block";
                 }, 1000);
             };
 
-            /* Afsluttende scene */
-            function playClosingScene() {
-                playVideo(videosContainer.getElementsByClassName("new-moon")[0],
+            /* Afsluttende scener */
+            function playEnd1() {
+                playVideo(videosContainer.getElementsByClassName("end-part-1")[0],
+                loop=false);
+
+                menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                menu.getElementsByClassName("final-option")[0].style.display = "none";
+
+                setTimeout (function () {
+                    menu.style.display = "block";
+                }, 1000);
+            };
+
+            function playEnd2() {
+                playVideo(videosContainer.getElementsByClassName("end-part-2")[0],
                 loop=false);
 
                 setTimeout (function () {
