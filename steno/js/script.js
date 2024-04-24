@@ -1,3 +1,4 @@
+/* Sørger for at funktionen kun gælder efter siden er loaded */
 window.onload = function() {
             let videosContainer = document.getElementsByClassName("videos")[0];
             let menu = document.getElementsByClassName("menu")[0];
