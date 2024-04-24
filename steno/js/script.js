@@ -8,7 +8,6 @@ window.onload = function() {
             fetch('json/text.json')
             .then(response => response.json())
             .then(menuText => {
-                // Populate the menu with the text from the JSON file
                 document.querySelector('.planets-option h3').textContent = menuText.planetsOption;
                 document.querySelector('.options-2 h3').textContent = menuText.options2H3;
                 document.getElementById('option-1-link').textContent = menuText.option1Li;
@@ -104,17 +103,13 @@ window.onload = function() {
                 setTimeout (function () {
                     menu.style.display = "block";
                     menu.getElementsByClassName("window")[0].style.display = "block";
-                }, 1000); /* 17000 */
+                }, 17000);
             };
 
              /* Scenen hvor Alex flyver videre til de andre planeter*/
              function playPlanetsChoice() {
                 playVideo(videosContainer.getElementsByClassName("planets-option")[0],
                 loop=false);
-
-                setTimeout (function () {
-                    menu.style.display = "block";
-                }, 1000); /* ? */
             };
 
 
@@ -129,7 +124,7 @@ window.onload = function() {
                 setTimeout (function () {
                     menu.style.display = "block";
                     menu.getElementsByClassName("options-2")[0].style.display = "block";
-                }, 1000); /* 30000 */
+                }, 31000);
             };
 
 
@@ -150,7 +145,7 @@ window.onload = function() {
                         showVideos(0, videosContainer.getElementsByClassName("roof-scene"));
                         playRoofScene2();
                     }
-                }, 1000); /* 8000 */
+                }, 8000);
             };
 
             /* Tag-scenen efter man har trykket på "tilbage". Her starter videoen 40 sekunder inde */
@@ -177,7 +172,7 @@ window.onload = function() {
                         setTimeout (function () {
                             menu.style.display = "block";
                             playEnd1();
-                        }, 18000);
+                        }, 16000);
                     };
 
                     function playWaningMoon() {
@@ -190,7 +185,7 @@ window.onload = function() {
                             menu.getElementsByClassName("final-option")[0].style.display = "block";
                             menu.style.display = "block";
                             playEnd1();
-                        }, 20000); /* 20000 */
+                        }, 20000);
                     };
 
                     function playWaxingMoon() {
@@ -214,7 +209,7 @@ window.onload = function() {
                         setTimeout (function () {
                             menu.style.display = "block";
                             playEnd1();
-                        }, 31000);
+                        }, 27000);
                     };
 
 
