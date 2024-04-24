@@ -1,15 +1,19 @@
+/* Så vi kan bestemme vha. class hvilke elementer der skal vises på skærmen på ethvert givent tidspunkt */
 .hide {
     display: none;
 }
 
+/* Bestemmer fonten for al skriften på hele produktet */
 body {
     font-family: 'Schoolbell', cursive;
 }
 
+/* Viser altid videoen .initial som det første på siden */
 .initial {
     display: block;
 }
 
+/* Vinduet man skal klikke på for at komme videre i videoen */
 .window {
     display: block;
     position: absolute;
@@ -20,6 +24,7 @@ body {
     cursor: pointer;
 }
 
+/* Den store <div> der har alle videoerne inde i sig */
 .videos {
     position: relative;
     width: 100vw;
@@ -27,11 +32,13 @@ body {
     margin: 0 auto;
 }
 
+/* Hvordan videoerne inde i den gældende <div> skal opføre sig */
 .videos video {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
+/* Den store container der indeholder startknappen */
 .play {
     display: flex;
     align-items: center;
@@ -43,6 +50,7 @@ body {
     top: 0;
 }
 
+/* Startknappen */
 .play img{
     cursor: pointer;
     width: 30rem;
@@ -50,14 +58,17 @@ body {
     top: 3%;
 }
 
+/* Skriftfarven på al skriften i .menu */
 .menu{
     color: #fff;
 }
 
+/* Så der ikke er prikker foran vores <li> */
 .menu ul li{
     list-style-type: none;
 }
 
+/* <div> med valget om at tage til månen eller tage videre til planeterne */
 .options-2{
     width: 100vw;
     height: 100vh;
@@ -66,6 +77,7 @@ body {
     text-align: center;
 }
 
+/* Valget om at tage til månen */
 #option-1-link{
     position: absolute;
     font-size: 3rem;
@@ -73,6 +85,7 @@ body {
     top: 60%;
 }
 
+/* Valget om at tage videre i rummet */
 #option-2-link{
     position: absolute;
     font-size: 2rem;
@@ -80,6 +93,7 @@ body {
     bottom: 10%;
 }
 
+/* Titlen på valget man skal træffe */
 .options-2 h3{
     position: absolute;
     left: 35%;
@@ -87,6 +101,7 @@ body {
     font-size: 3rem;
 }
 
+/* Pilen der peger mod månen */
 #arrow-1{
     position: absolute;
     font-size: 6rem;
@@ -95,6 +110,7 @@ body {
     animation: bounce1 2s infinite;
 }
 
+/* Pilen der peger ud mod resten af rummet */
 #arrow-2{
     position: absolute;
     font-size: 6rem;
@@ -104,6 +120,7 @@ body {
     cursor: pointer;
 }
 
+/* Månen */
 #moon-box{
     position: absolute;
     width: 23rem;
@@ -114,6 +131,7 @@ body {
     cursor: pointer;
 }
 
+/* Fuldmånen på valg-skærmen */
 #fuld{
     position: absolute;
     width: 23rem;
@@ -124,6 +142,7 @@ body {
     cursor: pointer;
 }
 
+/* Den aftagende måne på valg-skærmen */
 #aftagende{
     position: absolute;
     width: 23rem;
@@ -134,6 +153,7 @@ body {
     cursor: pointer;
 }
 
+/* Den tiltagende måne på valg-skærmen */
 #tiltagende{
     position: absolute;
     width: 23rem;
@@ -144,6 +164,7 @@ body {
     cursor: pointer;
 }
 
+/* Nymånen på valgskærmen */
 #ny{
     position: absolute;
     width: 23rem;
@@ -154,6 +175,7 @@ body {
     cursor: pointer;
 }
 
+/* Tilbage-knappen */
 #back-option{
     color: white;
     position: absolute;
@@ -163,6 +185,7 @@ body {
     cursor: pointer;
 }
 
+/* Fortsæt-knappen */
 #continue-option{
     color: white;
     position: absolute;
@@ -172,6 +195,7 @@ body {
     cursor: pointer;
 }
 
+/* Telefonen bamsen holder i hånden */
 .phone-click{
     position: absolute;
     width: 10rem;
@@ -181,22 +205,7 @@ body {
     cursor: pointer;
 }
 
-.roof-scene video{
-    width: 100%;
-}
-
-.new-moon video{
-    width: 100%;
-}
-
-.end-part-3 video{
-    width: 100%;
-}
-
-.full-moon video{
-    width: 100%;
-}
-
+/* Animation så pilen der peger mod månen hopper frem og tilbage */
 @keyframes bounce1{
     0%, 100%{
         transform: rotate(220deg) translateX(0);
@@ -206,27 +215,12 @@ body {
     }
 }
 
+/* Animation så pilen der peger mod resten af rummer hopper frem og tilbage */
 @keyframes bounce2{
     0%, 100%{
         transform: translateX(0);
     }
     50%{
        transform: translateX(-10px);
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .menu ul li {
-        display: inline-block;
-        margin-right: 30px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    .show-below-450 {
-        display: block !important;
-        color: red;
-        padding-left: 0;
-        padding-right: 0;
     }
 }

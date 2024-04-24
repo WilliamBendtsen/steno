@@ -1,8 +1,23 @@
 /* Sørger for at funktionen kun gælder efter siden er loaded */
 window.onload = function() {
+            /* Definition af vigtige relative variabler der går igen */
             let videosContainer = document.getElementsByClassName("videos")[0];
             let menu = document.getElementsByClassName("menu")[0];
 
+            /* så vi kan fetche alt vores skrift i produktet gennem vores json fil */
+            fetch('json/text.json')
+            .then(response => response.json())
+            .then(menuText => {
+                // Populate the menu with the text from the JSON file
+                document.querySelector('.planets-option h3').textContent = menuText.planetsOption;
+                document.querySelector('.options-2 h3').textContent = menuText.options2H3;
+                document.getElementById('option-1-link').textContent = menuText.option1Li;
+                document.getElementById('option-2-link').textContent = menuText.option2Li;
+                document.getElementById('back-option').textContent = menuText.backOption;
+                document.getElementById('continue-option').textContent = menuText.continueOption;
+            });
+
+            /* Så startknappen starter den første video */
             let playButton = document.getElementsByClassName("play-button")[0];
             playButton.onclick = function() {
                 playButton.style.display = "none";
@@ -89,7 +104,7 @@ window.onload = function() {
                 setTimeout (function () {
                     menu.style.display = "block";
                     menu.getElementsByClassName("window")[0].style.display = "block";
-                }, 17000);
+                }, 1000); /* 17000 */
             };
 
              /* Scenen hvor Alex flyver videre til de andre planeter*/
@@ -99,7 +114,7 @@ window.onload = function() {
 
                 setTimeout (function () {
                     menu.style.display = "block";
-                }, 1000);
+                }, 1000); /* ? */
             };
 
 
@@ -114,7 +129,7 @@ window.onload = function() {
                 setTimeout (function () {
                     menu.style.display = "block";
                     menu.getElementsByClassName("options-2")[0].style.display = "block";
-                }, 30000);
+                }, 1000); /* 30000 */
             };
 
 
@@ -135,7 +150,7 @@ window.onload = function() {
                         showVideos(0, videosContainer.getElementsByClassName("roof-scene"));
                         playRoofScene2();
                     }
-                }, 8000);
+                }, 1000); /* 8000 */
             };
 
             /* Tag-scenen efter man har trykket på "tilbage". Her starter videoen 40 sekunder inde */
