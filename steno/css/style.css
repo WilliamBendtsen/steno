@@ -157,18 +157,27 @@ body {
 #back-option{
     color: white;
     position: absolute;
-    font-size: 5rem;
-    left: 7%;
-    top: 2%;
+    font-size: 4rem;
+    left: 1rem;
+    top: 1rem;
     cursor: pointer;
 }
 
 #continue-option{
     color: white;
     position: absolute;
-    font-size: 5rem;
-    right: 7%;
-    top: 2%;
+    font-size: 4rem;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.phone-click{
+    position: absolute;
+    width: 10rem;
+    height: 12rem;
+    right: 36%;
+    top: 40%;
     cursor: pointer;
 }
 
