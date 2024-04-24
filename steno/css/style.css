@@ -181,6 +181,22 @@ body {
     cursor: pointer;
 }
 
+.roof-scene video{
+    width: 100%;
+}
+
+.new-moon video{
+    width: 100%;
+}
+
+.end-part-3 video{
+    width: 100%;
+}
+
+.full-moon video{
+    width: 100%;
+}
+
 @keyframes bounce1{
     0%, 100%{
         transform: rotate(220deg) translateX(0);

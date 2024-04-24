@@ -34,42 +34,45 @@ window.onload = function() {
             }
 
             /* Så man kan klikke på alle månerne og få deres tilhørende video spillet */
-            let fullMoonLink = document.getElementById("fuld");
-            fullMoonLink.onclick = function() {
-                showVideos(0, videosContainer.getElementsByClassName("full-moon"));
-                playFullMoon();
-            }
+                    let fullMoonLink = document.getElementById("fuld");
+                    fullMoonLink.onclick = function() {
+                        showVideos(0, videosContainer.getElementsByClassName("full-moon"));
+                        playFullMoon();
+                    }
 
-            let waningMoonLink = document.getElementById("aftagende");
-            waningMoonLink.onclick = function() {
-                showVideos(0, videosContainer.getElementsByClassName("aftagende"));
-                playWaningMoon();
-            }
+                    let waningMoonLink = document.getElementById("aftagende");
+                    waningMoonLink.onclick = function() {
+                        showVideos(0, videosContainer.getElementsByClassName("aftagende"));
+                        playWaningMoon();
+                    }
 
-            let waxingMoonLink = document.getElementById("tiltagende");
-            waxingMoonLink.onclick = function() {
-                showVideos(0, videosContainer.getElementsByClassName("tiltagende"));
-                playWaxingMoon();
-            }
+                    let waxingMoonLink = document.getElementById("tiltagende");
+                    waxingMoonLink.onclick = function() {
+                        showVideos(0, videosContainer.getElementsByClassName("tiltagende"));
+                        playWaxingMoon();
+                    }
 
-            let newMoonLink = document.getElementById("ny");
-            newMoonLink.onclick = function() {
-                showVideos(0, videosContainer.getElementsByClassName("new-moon"));
-                playNewMoon();
-            }
+                    let newMoonLink = document.getElementById("ny");
+                    newMoonLink.onclick = function() {
+                        showVideos(0, videosContainer.getElementsByClassName("new-moon"));
+                        playNewMoon();
+                    }
 
-            let backOption = document.getElementById("back-option");
-            backOption.onclick = function() {
-                showVideos(0, videosContainer.getElementsByClassName("moon-option"));
-                playMoonChoice();
-            }
+            
+            /* Tilbage og Fortsæt knapper */
+                    let backOption = document.getElementById("back-option");
+                    backOption.onclick = function() {
+                        showVideos(0, videosContainer.getElementsByClassName("moon-option"));
+                        playMoonChoice();
+                    }
 
-            let continueOption = document.getElementById("continue-option");
-            continueOption.onclick = function() {
-                showVideos(0, videosContainer.getElementsByClassName("end-part-2"));
-                playEnd2();
-            }
+                    let continueOption = document.getElementById("continue-option");
+                    continueOption.onclick = function() {
+                        showVideos(0, videosContainer.getElementsByClassName("end-part-2"));
+                        playEnd2();
+                    }
 
+            /* Så man kan trykke på mobilen for at fortsætte */
             let phoneClick = document.querySelector(".phone-click");
             phoneClick.onclick = function() {
                 showVideos(0, videosContainer.getElementsByClassName("end-part-3"));
@@ -78,8 +81,6 @@ window.onload = function() {
 
             
 
-            /* Funktioner for at man kan trykke på et element for at spille en ny scene */
-
             /* Den første scene på værelset, hvor man skal trykke på vinduet for at komme videre */
             function playInitialScene() {
                 playVideo(videosContainer.getElementsByClassName("room-scene")[0], loop=false);
@@ -87,54 +88,33 @@ window.onload = function() {
                 setTimeout (function () {
                     menu.style.display = "block";
                     menu.getElementsByClassName("window")[0].style.display = "block";
-                }, 17000); /*  */
+                }, 17000);
             };
 
-            /* Scenen på taget der ender med valget mellem at tage til månen eller videre i rummet */
-            function playRoofScene() {
-                playVideo(videosContainer.getElementsByClassName("roof-scene")[0],
-                loop=false);
-
-                let windowDiv = menu.getElementsByClassName("window")[0];
-                windowDiv.parentNode.removeChild(windowDiv);
-
-
-                setTimeout (function () {
-                    menu.style.display = "block";
-                    menu.getElementsByClassName("options-2")[0].style.display = "block";
-                }, 36000); /* 36000 */
-            };
-
-
-
-
-
-
-
-
-            /* Hvad gør vi lige her? */
-
-
-            /* Scenen hvor Alex flyver videre til de andre planeter*/
-            function playPlanetsChoice() {
+             /* Scenen hvor Alex flyver videre til de andre planeter*/
+             function playPlanetsChoice() {
                 playVideo(videosContainer.getElementsByClassName("planets-option")[0],
                 loop=false);
-
-                let windowDiv = menu.getElementsByClassName("window")[0];
-                windowDiv.parentNode.removeChild(windowDiv);
 
                 setTimeout (function () {
                     menu.style.display = "block";
                 }, 1000);
             };
 
-            
+
+            /* Scenen på taget der ender med valget mellem at tage til månen eller videre i rummet */
+            function playRoofScene() {
+                playVideo(videosContainer.getElementsByClassName("roof-scene")[0],
+                loop=false);
+
+                menu.getElementsByClassName("window")[0].style.display = "none";
 
 
-
-
-
-
+                setTimeout (function () {
+                    menu.style.display = "block";
+                    menu.getElementsByClassName("options-2")[0].style.display = "block";
+                }, 30000);
+            };
 
 
             /* Scenen hvor Alex flyver hen til månen */
@@ -154,9 +134,10 @@ window.onload = function() {
                         showVideos(0, videosContainer.getElementsByClassName("roof-scene"));
                         playRoofScene2();
                     }
-                }, 8000); /* 8000 */
+                }, 8000);
             };
 
+            /* Tag-scenen efter man har trykket på "tilbage". Her starter videoen 40 sekunder inde */
             function playRoofScene2() {
                 playVideo2(videosContainer.getElementsByClassName("roof-scene")[0],
                 loop=false);
@@ -171,56 +152,57 @@ window.onload = function() {
 
 
             /* Alle 4 scener for alle de 3 faser af månen */
-            function playFullMoon() {
-                playVideo(videosContainer.getElementsByClassName("full-moon")[0],
-                loop=false);
+                    function playFullMoon() {
+                        playVideo(videosContainer.getElementsByClassName("full-moon")[0],
+                        loop=false);
 
-                menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                        menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
 
-                setTimeout (function () {
-                    menu.style.display = "block";
-                    playEnd1();
-                }, 18000);
-            };
+                        setTimeout (function () {
+                            menu.style.display = "block";
+                            playEnd1();
+                        }, 18000);
+                    };
 
-            function playWaningMoon() {
-                playVideo(videosContainer.getElementsByClassName("aftagende")[0],
-                loop=false);
+                    function playWaningMoon() {
+                        playVideo(videosContainer.getElementsByClassName("aftagende")[0],
+                        loop=false);
 
-                menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                        menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
 
-                setTimeout (function () {
-                    menu.getElementsByClassName("final-option")[0].style.display = "block";
-                    menu.style.display = "block";
-                    playEnd1();
-                }, 20000); /* 20000 */
-            };
+                        setTimeout (function () {
+                            menu.getElementsByClassName("final-option")[0].style.display = "block";
+                            menu.style.display = "block";
+                            playEnd1();
+                        }, 20000); /* 20000 */
+                    };
 
-            function playWaxingMoon() {
-                playVideo(videosContainer.getElementsByClassName("tiltagende")[0],
-                loop=false);
+                    function playWaxingMoon() {
+                        playVideo(videosContainer.getElementsByClassName("tiltagende")[0],
+                        loop=false);
 
-                menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                        menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
 
-                setTimeout (function () {
-                    menu.style.display = "block";
-                    playEnd1();
-                }, 20000);
-            };
+                        setTimeout (function () {
+                            menu.style.display = "block";
+                            playEnd1();
+                        }, 20000);
+                    };
 
-            function playNewMoon() {
-                playVideo(videosContainer.getElementsByClassName("new-moon")[0],
-                loop=false);
+                    function playNewMoon() {
+                        playVideo(videosContainer.getElementsByClassName("new-moon")[0],
+                        loop=false);
 
-                menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
+                        menu.getElementsByClassName("moon-phase-options")[0].style.display = "none";
 
-                setTimeout (function () {
-                    menu.style.display = "block";
-                    playEnd1();
-                }, 31000);
-            };
+                        setTimeout (function () {
+                            menu.style.display = "block";
+                            playEnd1();
+                        }, 31000);
+                    };
 
-            /* Afsluttende scener */
+
+            /* Scenen hvor Alex snakker om månen, der ender med valget om at tage tilbage eller fortsætte */
             function playEnd1() {
                 playVideo(videosContainer.getElementsByClassName("end-part-1")[0],
                 loop=false);
@@ -232,9 +214,10 @@ window.onload = function() {
                     menu.style.display = "block";
                     menu.getElementsByClassName("final-option")[0].style.display = "block";
                     continueOption.style.display = "block";
-                }, 10000); /* 10000 */
+                }, 10000);
             };
 
+            /* Scenen hvor man skal klikke på bamsens walkie-talkie for at komme videre */
             function playEnd2() {
                 playVideo(videosContainer.getElementsByClassName("end-part-2")[0],
                 loop=false);
@@ -247,6 +230,8 @@ window.onload = function() {
                 }, 7000);
             };
 
+
+            /* Den afsluttende scene, der ender med at refreshe siden efter 30 sekunder, for at give effekten af at videoen looper */
             function playEnd3() {
                 playVideo(videosContainer.getElementsByClassName("end-part-3")[0],
                 loop=false);
@@ -255,12 +240,11 @@ window.onload = function() {
 
                 setTimeout (function () {
                     location.reload();
-                }, 25000);
+                }, 30000);
             };
 
 
-
-            /* ? */
+            /* Funktionen for at afspille videoerne i .videos */
             function playVideo(videoContainer, loop=false) {
                 let lastVideoContainer = videosContainer.getElementsByClassName("active")[0];
                 lastVideoContainer.classList.remove("active");
@@ -278,6 +262,7 @@ window.onload = function() {
                 return video;
             }
 
+            /* Funktionen for af afspille playRoofScene2, hvor videoen skal start 40 sekunder inde */
             function playVideo2(videoContainer, loop=false) {
                 let lastVideoContainer = videosContainer.getElementsByClassName("active")[0];
                 lastVideoContainer.classList.remove("active");
@@ -296,7 +281,7 @@ window.onload = function() {
                 return video;
             }
 
-            /* ? */
+            /* Bestemmer hvorvidt der er en video der skal spilles efter den gældende, og preloader den næste video når den nuværende video er over 70% færdig */
             function showVideos(index, videos) {
                 if (index < (videos.length - 1)) {
                     hasNextVideo = true;
